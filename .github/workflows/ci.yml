@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  ml:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v7
+      - name: Install without torch, which CI never needs
+        run: uv sync --frozen --no-default-groups --group dev
+      - run: uv run --no-sync ruff format --check ml tests scripts
+      - run: uv run --no-sync ruff check ml tests scripts
+      - run: uv run --no-sync pytest
+
+  core:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: gradle/actions/wrapper-validation@v6
+      - uses: gradle/actions/setup-gradle@v6
+      - name: Lint all Kotlin, app sources included, without configuring the Android plugin
+        run: ./gradlew -p core ktlintCheck --no-daemon
+      - name: Preprocessing tests and Kotlin-Python parity, no Android SDK involved
+        run: ./gradlew -p core test --no-daemon

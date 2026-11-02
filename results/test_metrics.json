@@ -1,0 +1,327 @@
+{
+  "shipped_seed": 4,
+  "split": "UCI HAR official split: 21 training subjects, 9 test subjects, no overlap",
+  "selection": "seed and epoch chosen on 5 validation subjects from the training 21",
+  "test_subjects": [
+    2,
+    4,
+    9,
+    10,
+    12,
+    13,
+    18,
+    20,
+    24
+  ],
+  "litert": {
+    "windows": 2947,
+    "accuracy": 0.8873430607397353,
+    "macro_f1": 0.8859332887468684,
+    "per_class": {
+      "WALKING": {
+        "precision": 0.9503105590062112,
+        "recall": 0.9254032258064516,
+        "f1": 0.9376915219611849,
+        "support": 496
+      },
+      "WALKING_UPSTAIRS": {
+        "precision": 0.8483685220729367,
+        "recall": 0.9384288747346072,
+        "f1": 0.8911290322580645,
+        "support": 471
+      },
+      "WALKING_DOWNSTAIRS": {
+        "precision": 0.9090909090909091,
+        "recall": 0.8809523809523809,
+        "f1": 0.894800483675937,
+        "support": 420
+      },
+      "SITTING": {
+        "precision": 0.8805194805194805,
+        "recall": 0.6904276985743381,
+        "f1": 0.773972602739726,
+        "support": 491
+      },
+      "STANDING": {
+        "precision": 0.7689873417721519,
+        "recall": 0.9135338345864662,
+        "f1": 0.8350515463917526,
+        "support": 532
+      },
+      "LAYING": {
+        "precision": 1.0,
+        "recall": 0.9664804469273743,
+        "f1": 0.9829545454545454,
+        "support": 537
+      }
+    },
+    "confusion": [
+      [
+        459,
+        37,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        12,
+        442,
+        17,
+        0,
+        0,
+        0
+      ],
+      [
+        9,
+        41,
+        370,
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        1,
+        2,
+        339,
+        146,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        46,
+        486,
+        0
+      ],
+      [
+        0,
+        0,
+        18,
+        0,
+        0,
+        519
+      ]
+    ],
+    "per_subject": {
+      "2": {
+        "windows": 302,
+        "accuracy": 0.9006622516556292,
+        "macro_f1": 0.8831229546517064
+      },
+      "4": {
+        "windows": 317,
+        "accuracy": 0.9085173501577287,
+        "macro_f1": 0.9012377652210309
+      },
+      "9": {
+        "windows": 288,
+        "accuracy": 0.7638888888888888,
+        "macro_f1": 0.7577927906633845
+      },
+      "10": {
+        "windows": 294,
+        "accuracy": 0.6360544217687075,
+        "macro_f1": 0.6356720277032798
+      },
+      "12": {
+        "windows": 320,
+        "accuracy": 0.909375,
+        "macro_f1": 0.9046483408775119
+      },
+      "13": {
+        "windows": 327,
+        "accuracy": 0.9388379204892966,
+        "macro_f1": 0.9342434991718437
+      },
+      "18": {
+        "windows": 364,
+        "accuracy": 0.9313186813186813,
+        "macro_f1": 0.927650032818412
+      },
+      "20": {
+        "windows": 354,
+        "accuracy": 0.9322033898305084,
+        "macro_f1": 0.939433551198257
+      },
+      "24": {
+        "windows": 381,
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      }
+    },
+    "subject_accuracy_mean": 0.8800953226788268,
+    "subject_accuracy_std": 0.11085740495250351,
+    "subject_accuracy_min": 0.6360544217687075,
+    "subject_accuracy_max": 1.0
+  },
+  "pytorch": {
+    "windows": 2947,
+    "accuracy": 0.8873430607397353,
+    "macro_f1": 0.8859332887468684,
+    "per_class": {
+      "WALKING": {
+        "precision": 0.9503105590062112,
+        "recall": 0.9254032258064516,
+        "f1": 0.9376915219611849,
+        "support": 496
+      },
+      "WALKING_UPSTAIRS": {
+        "precision": 0.8483685220729367,
+        "recall": 0.9384288747346072,
+        "f1": 0.8911290322580645,
+        "support": 471
+      },
+      "WALKING_DOWNSTAIRS": {
+        "precision": 0.9090909090909091,
+        "recall": 0.8809523809523809,
+        "f1": 0.894800483675937,
+        "support": 420
+      },
+      "SITTING": {
+        "precision": 0.8805194805194805,
+        "recall": 0.6904276985743381,
+        "f1": 0.773972602739726,
+        "support": 491
+      },
+      "STANDING": {
+        "precision": 0.7689873417721519,
+        "recall": 0.9135338345864662,
+        "f1": 0.8350515463917526,
+        "support": 532
+      },
+      "LAYING": {
+        "precision": 1.0,
+        "recall": 0.9664804469273743,
+        "f1": 0.9829545454545454,
+        "support": 537
+      }
+    },
+    "confusion": [
+      [
+        459,
+        37,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        12,
+        442,
+        17,
+        0,
+        0,
+        0
+      ],
+      [
+        9,
+        41,
+        370,
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        1,
+        2,
+        339,
+        146,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        46,
+        486,
+        0
+      ],
+      [
+        0,
+        0,
+        18,
+        0,
+        0,
+        519
+      ]
+    ],
+    "per_subject": {
+      "2": {
+        "windows": 302,
+        "accuracy": 0.9006622516556292,
+        "macro_f1": 0.8831229546517064
+      },
+      "4": {
+        "windows": 317,
+        "accuracy": 0.9085173501577287,
+        "macro_f1": 0.9012377652210309
+      },
+      "9": {
+        "windows": 288,
+        "accuracy": 0.7638888888888888,
+        "macro_f1": 0.7577927906633845
+      },
+      "10": {
+        "windows": 294,
+        "accuracy": 0.6360544217687075,
+        "macro_f1": 0.6356720277032798
+      },
+      "12": {
+        "windows": 320,
+        "accuracy": 0.909375,
+        "macro_f1": 0.9046483408775119
+      },
+      "13": {
+        "windows": 327,
+        "accuracy": 0.9388379204892966,
+        "macro_f1": 0.9342434991718437
+      },
+      "18": {
+        "windows": 364,
+        "accuracy": 0.9313186813186813,
+        "macro_f1": 0.927650032818412
+      },
+      "20": {
+        "windows": 354,
+        "accuracy": 0.9322033898305084,
+        "macro_f1": 0.939433551198257
+      },
+      "24": {
+        "windows": 381,
+        "accuracy": 1.0,
+        "macro_f1": 1.0
+      }
+    },
+    "subject_accuracy_mean": 0.8800953226788268,
+    "subject_accuracy_std": 0.11085740495250351,
+    "subject_accuracy_min": 0.6360544217687075,
+    "subject_accuracy_max": 1.0
+  },
+  "conversion": {
+    "windows": 2947,
+    "label_agreement": 1.0,
+    "max_absolute_probability_difference": 4.231929779052734e-06
+  },
+  "model": {
+    "file_bytes": 997196,
+    "parameters": 52102,
+    "graph_ops": 4098,
+    "input_shape": [
+      1,
+      128,
+      6
+    ],
+    "sha256": "8f38f3b2b307c5b7ac3389eb77280e685a38f5f6f9826b89a4e89416ff9ca878"
+  },
+  "latency_ms": {
+    "note": "Measured on the development Mac. On-device latency is unmeasured.",
+    "hardware": "Apple M3 Max, Darwin, single LiteRT thread, Python host",
+    "repeats": 2000,
+    "p50": 0.8378745005757082,
+    "p95": 1.165372952527832
+  }
+}

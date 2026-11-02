@@ -1,0 +1,26 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# UCI HAR raw download and training runs: fetched or regenerated, never committed
+/data/
+/runs/
+
+# Gradle and Kotlin
+.gradle/
+.kotlin/
+build/
+local.properties
+
+# Android and IDE
+*.apk
+*.aab
+captures/
+.idea/
+*.iml
+
+# macOS
+.DS_Store

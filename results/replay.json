@@ -1,0 +1,77 @@
+{
+  "note": "Simulated sensor events built from held-out recordings. No phone or emulator was involved. The 20 Hz filter runs a second time on data the authors already filtered.",
+  "recordings": 257,
+  "direct_windows": {
+    "windows": 2947,
+    "accuracy": 0.8873430607397353,
+    "macro_f1": 0.8859332887468684,
+    "subject_accuracy_min": 0.6360544217687075,
+    "subject_accuracy_max": 1.0
+  },
+  "conditions": {
+    "50 Hz, 1 ms jitter": {
+      "window": {
+        "windows": 2690,
+        "accuracy": 0.8869888475836432,
+        "macro_f1": 0.885053395744266,
+        "subject_accuracy_min": 0.6353383458646616,
+        "subject_accuracy_max": 0.9971590909090909
+      },
+      "smoothed": {
+        "windows": 2690,
+        "accuracy": 0.8977695167286245,
+        "macro_f1": 0.8961402984714965,
+        "subject_accuracy_min": 0.6390977443609023,
+        "subject_accuracy_max": 1.0
+      }
+    },
+    "50 Hz, 4 ms jitter": {
+      "window": {
+        "windows": 2690,
+        "accuracy": 0.8862453531598513,
+        "macro_f1": 0.884187638312318,
+        "subject_accuracy_min": 0.631578947368421,
+        "subject_accuracy_max": 0.9971590909090909
+      },
+      "smoothed": {
+        "windows": 2690,
+        "accuracy": 0.8977695167286245,
+        "macro_f1": 0.8960924445869787,
+        "subject_accuracy_min": 0.6390977443609023,
+        "subject_accuracy_max": 1.0
+      }
+    },
+    "40 Hz, 2 ms jitter": {
+      "window": {
+        "windows": 2690,
+        "accuracy": 0.8858736059479554,
+        "macro_f1": 0.8838078594156699,
+        "subject_accuracy_min": 0.6353383458646616,
+        "subject_accuracy_max": 0.9971590909090909
+      },
+      "smoothed": {
+        "windows": 2690,
+        "accuracy": 0.8970260223048327,
+        "macro_f1": 0.8952856272377671,
+        "subject_accuracy_min": 0.6428571428571429,
+        "subject_accuracy_max": 1.0
+      }
+    },
+    "100 Hz, 1 ms jitter": {
+      "window": {
+        "windows": 2690,
+        "accuracy": 0.8858736059479554,
+        "macro_f1": 0.8839488371750434,
+        "subject_accuracy_min": 0.6353383458646616,
+        "subject_accuracy_max": 0.9971590909090909
+      },
+      "smoothed": {
+        "windows": 2690,
+        "accuracy": 0.8962825278810409,
+        "macro_f1": 0.8945267520251038,
+        "subject_accuracy_min": 0.6390977443609023,
+        "subject_accuracy_max": 1.0
+      }
+    }
+  }
+}

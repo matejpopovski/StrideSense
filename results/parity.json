@@ -1,0 +1,10 @@
+{
+  "tolerance": 1.0E-9,
+  "fixtures": {
+    "fast_sensors_downstairs": {"windows": 4, "max_abs_difference": 2.220446049250313E-15},
+    "gyroscope_dropout_upstairs": {"windows": 7, "max_abs_difference": 2.6645352591003757E-15},
+    "jitter_walking": {"windows": 4, "max_abs_difference": 1.9984014443252818E-15},
+    "late_gyroscope_sitting": {"windows": 4, "max_abs_difference": 1.7763568394002505E-15},
+    "repeated_timestamps_standing": {"windows": 4, "max_abs_difference": 1.9984014443252818E-15}
+  }
+}

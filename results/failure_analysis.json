@@ -1,0 +1,165 @@
+{
+  "all_errors": 332,
+  "sit_stand_errors": 192,
+  "sit_stand_share_of_errors": 0.5783132530120482,
+  "correlation_tilt_vs_confusion_rate": -0.7271644241105029,
+  "training_subjects": {
+    "sitting_gravity_g": [
+      0.9507710152379169,
+      0.14330618445637494,
+      0.15436915043134203
+    ],
+    "standing_gravity_g": [
+      1.001449081734273,
+      -0.16334147757659276,
+      -0.03211995259940442
+    ],
+    "tilt_between_postures_degrees": 20.86544055296977
+  },
+  "test_subjects": {
+    "2": {
+      "accuracy": 0.9006622516556292,
+      "sit_stand_confusions": 30,
+      "sit_stand_windows": 100,
+      "sitting_gravity_g": [
+        1.0007267644142974,
+        -0.0866806083526883,
+        0.1894684103731972
+      ],
+      "standing_gravity_g": [
+        0.9700984324121641,
+        -0.3522133100734748,
+        0.1227737974124668
+      ],
+      "tilt_between_postures_degrees": 15.32978513273352
+    },
+    "4": {
+      "accuracy": 0.9085173501577287,
+      "sit_stand_confusions": 14,
+      "sit_stand_windows": 106,
+      "sitting_gravity_g": [
+        0.9492479087412358,
+        0.23464342290727302,
+        0.10349738948531922
+      ],
+      "standing_gravity_g": [
+        1.0125477251796318,
+        -0.053737575914876094,
+        0.16249990225800762
+      ],
+      "tilt_between_postures_degrees": 17.049060374790347
+    },
+    "9": {
+      "accuracy": 0.7638888888888888,
+      "sit_stand_confusions": 28,
+      "sit_stand_windows": 95,
+      "sitting_gravity_g": [
+        0.9777186292875558,
+        -0.028499442485198756,
+        0.08914353541532818
+      ],
+      "standing_gravity_g": [
+        1.016545762018197,
+        0.006159955602283023,
+        0.007770512557019376
+      ],
+      "tilt_between_postures_degrees": 5.1771059007840705
+    },
+    "10": {
+      "accuracy": 0.6360544217687075,
+      "sit_stand_confusions": 51,
+      "sit_stand_windows": 98,
+      "sitting_gravity_g": [
+        0.8943076474609336,
+        -0.022054036016386277,
+        0.19485058499490318
+      ],
+      "standing_gravity_g": [
+        1.0102063375419343,
+        -0.024212475572395222,
+        0.02868764568023381
+      ],
+      "tilt_between_postures_degrees": 10.661716013732505
+    },
+    "12": {
+      "accuracy": 0.909375,
+      "sit_stand_confusions": 22,
+      "sit_stand_windows": 112,
+      "sitting_gravity_g": [
+        0.9902215195344943,
+        0.10170930778575703,
+        0.08217045902954359
+      ],
+      "standing_gravity_g": [
+        1.012702238058946,
+        -0.20040902612372072,
+        -0.04346111771866623
+      ],
+      "tilt_between_postures_degrees": 18.47501804965103
+    },
+    "13": {
+      "accuracy": 0.9388379204892966,
+      "sit_stand_confusions": 11,
+      "sit_stand_windows": 106,
+      "sitting_gravity_g": [
+        0.9896202175687923,
+        0.12560351613408746,
+        0.07259779256284153
+      ],
+      "standing_gravity_g": [
+        1.002433672032662,
+        -0.22140199482224457,
+        -0.0583641330810854
+      ],
+      "tilt_between_postures_degrees": 21.025032240884016
+    },
+    "18": {
+      "accuracy": 0.9313186813186813,
+      "sit_stand_confusions": 12,
+      "sit_stand_windows": 130,
+      "sitting_gravity_g": [
+        0.9790807127004915,
+        0.15001750279804438,
+        0.152368188441247
+      ],
+      "standing_gravity_g": [
+        1.0060277422252175,
+        -0.18562952734447047,
+        -0.05331010259297191
+      ],
+      "tilt_between_postures_degrees": 22.419804470639672
+    },
+    "20": {
+      "accuracy": 0.9322033898305084,
+      "sit_stand_confusions": 24,
+      "sit_stand_windows": 139,
+      "sitting_gravity_g": [
+        0.9895927183132506,
+        0.0925685162680474,
+        0.14351388576397134
+      ],
+      "standing_gravity_g": [
+        0.9802479018674117,
+        -0.2879858987504769,
+        0.06672815352963275
+      ],
+      "tilt_between_postures_degrees": 22.050840349983837
+    },
+    "24": {
+      "accuracy": 1.0,
+      "sit_stand_confusions": 0,
+      "sit_stand_windows": 137,
+      "sitting_gravity_g": [
+        0.985244406709064,
+        0.20218518169991406,
+        0.10388224942827866
+      ],
+      "standing_gravity_g": [
+        1.0197616673641554,
+        -0.12556761881725595,
+        -0.05763826346441892
+      ],
+      "tilt_between_postures_degrees": 20.70274331790869
+    }
+  }
+}

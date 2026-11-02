@@ -1,0 +1,481 @@
+{
+  "note": "Rotations are simulated by turning held-out windows in software. This is not a measurement of a phone in a pocket. The channels cancel a fixed rotation by construction, so matching scores under rotation are expected and prove only that.",
+  "rule": {
+    "ship_if": "worst simulated rotation accuracy >= 0.75 and waist accuracy >= 0.80",
+    "otherwise": "keep the waist model and record this as a negative result",
+    "eligible": "variants whose channels hold no gravity level, so calibration cannot carry pose",
+    "selection": "eligible variant by highest mean validation macro F1 over seeds 0 and 1, test scoring off; then seed by highest validation macro F1 over seeds 0 to 4",
+    "scored_on": "exported LiteRT file of that seed, on the 9 held-out subjects",
+    "worst_rotation_means": "lowest of the named poses and the per-window uniform random case"
+  },
+  "decision": "keep the waist model",
+  "gravity_level_leak": {
+    "note": "Training subjects only. Differences are sensor calibration, not physics.",
+    "mean_measured_gravity_g": {
+      "WALKING": 1.0303423492736004,
+      "WALKING_UPSTAIRS": 1.025665771075928,
+      "WALKING_DOWNSTAIRS": 1.0212997770841579,
+      "SITTING": 1.0208459775547416,
+      "STANDING": 1.032639726667272,
+      "LAYING": 1.0065822456308016
+    },
+    "laying_vs_upright_accuracy_from_this_number_alone": 0.8787804278337841
+  },
+  "waist_model_with_still_classes_merged_post_hoc": 0.9524940617577197,
+  "tuning": {
+    "gravity_tune_dynamic3": {
+      "eligible": true,
+      "val_macro_f1": [
+        0.5510273719929498,
+        0.5530510785043368
+      ],
+      "mean": 0.5520392252486432
+    },
+    "gravity_tune_dynamic3_log": {
+      "eligible": true,
+      "val_macro_f1": [
+        0.55503183769077,
+        0.5291520221189511
+      ],
+      "mean": 0.5420919299048605
+    },
+    "gravity_tune_aligned4": {
+      "eligible": false,
+      "val_macro_f1": [
+        0.6109849225594666,
+        0.5973067240099404
+      ],
+      "mean": 0.6041458232847035
+    },
+    "gravity_tune_aligned3": {
+      "eligible": false,
+      "val_macro_f1": [
+        0.8490982958799055,
+        0.7228520337971194
+      ],
+      "mean": 0.7859751648385125
+    },
+    "gravity_tune_log": {
+      "eligible": false,
+      "val_macro_f1": [
+        0.8015095527374911,
+        0.7467270078110663
+      ],
+      "mean": 0.7741182802742788
+    },
+    "gravity_tune_log_dropout3": {
+      "eligible": false,
+      "val_macro_f1": [
+        0.8567175875487081,
+        0.5905427201192615
+      ],
+      "mean": 0.7236301538339848
+    }
+  },
+  "eligible_model": {
+    "accuracy_with_still_classes_merged_post_hoc": 0.9823549372242959,
+    "variant": "dynamic3",
+    "selected_seed": 1,
+    "final_seeds": {
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "val_macro_f1": [
+        0.5510273719929498,
+        0.5530510785043368,
+        0.5490409490527405,
+        0.5498170151897123,
+        0.5513746366763373
+      ],
+      "test_accuracy": [
+        0.6270783847980997,
+        0.6352222599253479,
+        0.6335256192738378,
+        0.6291143535799117,
+        0.6277570410587038
+      ],
+      "test_accuracy_mean": 0.6305395317271802,
+      "test_accuracy_std": 0.003626209706791342
+    },
+    "model_file_bytes": 994124,
+    "waist": {
+      "windows": 2947,
+      "accuracy": 0.6352222599253479,
+      "macro_f1": 0.5667378637658445,
+      "per_class": {
+        "WALKING": {
+          "precision": 0.9660678642714571,
+          "recall": 0.9758064516129032,
+          "f1": 0.970912738214644,
+          "support": 496
+        },
+        "WALKING_UPSTAIRS": {
+          "precision": 0.9410526315789474,
+          "recall": 0.9490445859872612,
+          "f1": 0.945031712473573,
+          "support": 471
+        },
+        "WALKING_DOWNSTAIRS": {
+          "precision": 0.9829683698296837,
+          "recall": 0.9619047619047619,
+          "f1": 0.9723225030084236,
+          "support": 420
+        },
+        "SITTING": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 491
+        },
+        "STANDING": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "support": 532
+        },
+        "LAYING": {
+          "precision": 0.34423076923076923,
+          "recall": 1.0,
+          "f1": 0.5121602288984263,
+          "support": 537
+        }
+      },
+      "confusion": [
+        [
+          484,
+          12,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          17,
+          447,
+          7,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          16,
+          404,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          491
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          532
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          537
+        ]
+      ],
+      "per_subject": {
+        "2": {
+          "windows": 302,
+          "accuracy": 0.6622516556291391,
+          "macro_f1": 0.5753087759926666
+        },
+        "4": {
+          "windows": 317,
+          "accuracy": 0.6466876971608833,
+          "macro_f1": 0.5631164785370393
+        },
+        "9": {
+          "windows": 288,
+          "accuracy": 0.6319444444444444,
+          "macro_f1": 0.5483639407421823
+        },
+        "10": {
+          "windows": 294,
+          "accuracy": 0.6530612244897959,
+          "macro_f1": 0.5755753476937278
+        },
+        "12": {
+          "windows": 320,
+          "accuracy": 0.6375,
+          "macro_f1": 0.5726519696304605
+        },
+        "13": {
+          "windows": 327,
+          "accuracy": 0.6574923547400612,
+          "macro_f1": 0.5713229072845875
+        },
+        "18": {
+          "windows": 364,
+          "accuracy": 0.6236263736263736,
+          "macro_f1": 0.5625803489439853
+        },
+        "20": {
+          "windows": 354,
+          "accuracy": 0.5847457627118644,
+          "macro_f1": 0.5558057709995774
+        },
+        "24": {
+          "windows": 381,
+          "accuracy": 0.6299212598425197,
+          "macro_f1": 0.5740057438971093
+        }
+      },
+      "subject_accuracy_mean": 0.6363589747383425,
+      "subject_accuracy_std": 0.023428015557931826,
+      "subject_accuracy_min": 0.5847457627118644,
+      "subject_accuracy_max": 0.6622516556291391
+    },
+    "poses": {
+      "as trained, sideways at the waist": 0.6352222599253479,
+      "upright in portrait": 0.6352222599253479,
+      "upside down in portrait": 0.6352222599253479,
+      "sideways, flipped end for end": 0.6352222599253479,
+      "uniformly random per window": 0.6352222599253479
+    },
+    "worst_rotation_accuracy": 0.6352222599253479
+  },
+  "per_class_against_waist_model": {
+    "WALKING": {
+      "waist_model_recall": 0.9254032258064516,
+      "gravity_recall": 0.9758064516129032,
+      "waist_model_f1": 0.9376915219611849,
+      "gravity_f1": 0.970912738214644
+    },
+    "WALKING_UPSTAIRS": {
+      "waist_model_recall": 0.9384288747346072,
+      "gravity_recall": 0.9490445859872612,
+      "waist_model_f1": 0.8911290322580645,
+      "gravity_f1": 0.945031712473573
+    },
+    "WALKING_DOWNSTAIRS": {
+      "waist_model_recall": 0.8809523809523809,
+      "gravity_recall": 0.9619047619047619,
+      "waist_model_f1": 0.894800483675937,
+      "gravity_f1": 0.9723225030084236
+    },
+    "SITTING": {
+      "waist_model_recall": 0.6904276985743381,
+      "gravity_recall": 0.0,
+      "waist_model_f1": 0.773972602739726,
+      "gravity_f1": 0.0
+    },
+    "STANDING": {
+      "waist_model_recall": 0.9135338345864662,
+      "gravity_recall": 0.0,
+      "waist_model_f1": 0.8350515463917526,
+      "gravity_f1": 0.0
+    },
+    "LAYING": {
+      "waist_model_recall": 0.9664804469273743,
+      "gravity_recall": 1.0,
+      "waist_model_f1": 0.9829545454545454,
+      "gravity_f1": 0.5121602288984263
+    }
+  },
+  "ineligible_comparison": {
+    "note": "Keeps the gravity level, so it cannot decide the rule. Its rotated scores are unreliable: software rotation preserves the level, a real phone would not.",
+    "accuracy_with_gravity_level_held_constant": 0.6131659314557176,
+    "accuracy_with_still_classes_merged_post_hoc": 0.9779436715303699,
+    "variant": "aligned3",
+    "selected_seed": 0,
+    "final_seeds": {
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "val_macro_f1": [
+        0.8490982958799055,
+        0.7228520337971194,
+        0.5692123961079897,
+        0.5781606348436046,
+        0.5578524193949942
+      ],
+      "test_accuracy": [
+        0.8479809976247031,
+        0.7940278249066848,
+        0.6409908381404819,
+        0.6518493383101459,
+        0.6274177129284018
+      ],
+      "test_accuracy_mean": 0.7124533423820836,
+      "test_accuracy_std": 0.1012829386339761
+    },
+    "model_file_bytes": 994124,
+    "waist": {
+      "windows": 2947,
+      "accuracy": 0.8479809976247031,
+      "macro_f1": 0.8531765700263453,
+      "per_class": {
+        "WALKING": {
+          "precision": 0.9778672032193159,
+          "recall": 0.9798387096774194,
+          "f1": 0.9788519637462235,
+          "support": 496
+        },
+        "WALKING_UPSTAIRS": {
+          "precision": 0.9230769230769231,
+          "recall": 0.9426751592356688,
+          "f1": 0.9327731092436975,
+          "support": 471
+        },
+        "WALKING_DOWNSTAIRS": {
+          "precision": 0.9584352078239609,
+          "recall": 0.9333333333333333,
+          "f1": 0.9457177322074789,
+          "support": 420
+        },
+        "SITTING": {
+          "precision": 0.5985401459854015,
+          "recall": 0.6680244399185336,
+          "f1": 0.6313763233878731,
+          "support": 491
+        },
+        "STANDING": {
+          "precision": 0.8432203389830508,
+          "recall": 0.7481203007518797,
+          "f1": 0.7928286852589641,
+          "support": 532
+        },
+        "LAYING": {
+          "precision": 0.8351851851851851,
+          "recall": 0.839851024208566,
+          "f1": 0.8375116063138347,
+          "support": 537
+        }
+      },
+      "confusion": [
+        [
+          486,
+          9,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          11,
+          444,
+          16,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          28,
+          392,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          328,
+          74,
+          89
+        ],
+        [
+          0,
+          0,
+          0,
+          134,
+          398,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          86,
+          0,
+          451
+        ]
+      ],
+      "per_subject": {
+        "2": {
+          "windows": 302,
+          "accuracy": 0.8973509933774835,
+          "macro_f1": 0.8796126268979467
+        },
+        "4": {
+          "windows": 317,
+          "accuracy": 0.7350157728706624,
+          "macro_f1": 0.6979168082315138
+        },
+        "9": {
+          "windows": 288,
+          "accuracy": 0.7951388888888888,
+          "macro_f1": 0.7388748812942626
+        },
+        "10": {
+          "windows": 294,
+          "accuracy": 0.6496598639455783,
+          "macro_f1": 0.6666460921151158
+        },
+        "12": {
+          "windows": 320,
+          "accuracy": 0.94375,
+          "macro_f1": 0.9434304844760332
+        },
+        "13": {
+          "windows": 327,
+          "accuracy": 0.9204892966360856,
+          "macro_f1": 0.9100559752430638
+        },
+        "18": {
+          "windows": 364,
+          "accuracy": 0.9120879120879121,
+          "macro_f1": 0.90553663661297
+        },
+        "20": {
+          "windows": 354,
+          "accuracy": 0.7937853107344632,
+          "macro_f1": 0.7812931399190716
+        },
+        "24": {
+          "windows": 381,
+          "accuracy": 0.9422572178477691,
+          "macro_f1": 0.9472792529540746
+        }
+      },
+      "subject_accuracy_mean": 0.843281695154316,
+      "subject_accuracy_std": 0.10457495990373215,
+      "subject_accuracy_min": 0.6496598639455783,
+      "subject_accuracy_max": 0.94375
+    },
+    "poses": {
+      "as trained, sideways at the waist": 0.8479809976247031,
+      "upright in portrait": 0.8479809976247031,
+      "upside down in portrait": 0.8479809976247031,
+      "sideways, flipped end for end": 0.8479809976247031,
+      "uniformly random per window": 0.8479809976247031
+    },
+    "worst_rotation_accuracy": 0.8479809976247031
+  }
+}
