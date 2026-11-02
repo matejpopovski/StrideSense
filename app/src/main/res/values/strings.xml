@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">StrideSense</string>
+    <string name="notification_channel">Activity logging</string>
+    <string name="notification_title">Logging your day</string>
+    <string name="notification_waiting">Waiting for the first window</string>
+    <string name="notification_stop">Stop</string>
+    <string name="status_idle">NOT LOGGING</string>
+    <string name="status_waiting">LISTENING</string>
+    <string name="action_start">START LOGGING</string>
+    <string name="action_stop">STOP LOGGING</string>
+    <string name="section_timeline">TODAY</string>
+    <string name="section_totals">TIME BY ACTIVITY</string>
+    <string name="confidence_value">%1$d%% confidence</string>
+    <string name="placement_note">Trained on phones worn sideways at the waist. Expect poor results in a pocket or hand. Real-world accuracy is unmeasured.</string>
+    <string name="problem_no_sensors">This device lacks an accelerometer or gyroscope.</string>
+    <string name="problem_sensor_refused">The sensors refused to start.</string>
+</resources>

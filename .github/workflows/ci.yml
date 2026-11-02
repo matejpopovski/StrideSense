@@ -34,3 +34,36 @@ jobs:
         run: ./gradlew -p core ktlintCheck --no-daemon
       - name: Preprocessing tests and Kotlin-Python parity, no Android SDK involved
         run: ./gradlew -p core test --no-daemon
+
+  android:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      # Robolectric needs JDK 21 to run an SDK 36 target.
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "21"
+      - uses: gradle/actions/setup-gradle@v6
+      - run: ./gradlew :app:assembleDebug --no-daemon
+      - name: Compile the instrumented model test, which needs a device to run
+        run: ./gradlew :app:assembleDebugAndroidTest --no-daemon
+      - name: Robolectric tests
+        run: ./gradlew :app:testDebugUnitTest --no-daemon
+      - name: Record Roborazzi screenshots
+        run: ./gradlew :app:recordRoborazziDebug --no-daemon
+      - uses: actions/upload-artifact@v7
+        with:
+          name: roborazzi-screenshots
+          path: app/build/outputs/roborazzi
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v7
+        with:
+          name: debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v7
+        if: failure()
+        with:
+          name: android-test-reports
+          path: app/build/reports/tests

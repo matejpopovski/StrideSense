@@ -31,9 +31,10 @@ def test_the_spec_agrees_with_the_reference_constants():
     assert SPEC["labels"] == list(data.ACTIVITIES)
     assert SPEC["channels"] == list(data.DEVICE_CHANNELS)
     b, a, zi = preprocess.butterworth()
-    np.testing.assert_array_equal(SPEC["filter_b"], b)
-    np.testing.assert_array_equal(SPEC["filter_a"], a)
-    np.testing.assert_array_equal(SPEC["filter_zi"], zi)
+    # SciPy's Linux and macOS builds round these differently in the last bit.
+    np.testing.assert_allclose(SPEC["filter_b"], b, rtol=1e-12)
+    np.testing.assert_allclose(SPEC["filter_a"], a, rtol=1e-12)
+    np.testing.assert_allclose(SPEC["filter_zi"], zi, rtol=1e-12)
 
 
 def test_the_model_takes_one_window_and_gives_six_probabilities():
